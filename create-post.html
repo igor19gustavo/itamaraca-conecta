@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Criar publicação - Itamaracá Conecta</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+
+<body>
+
+    <header class="header create-post-header">
+
+        <div class="container header-content">
+
+            <a href="index.html" class="logo">
+                🌴 Itamaracá Conecta
+            </a>
+
+            <nav class="nav">
+
+                <a href="index.html">Início</a>
+
+                <a href="index.html#explorar">
+                    Explorar
+                </a>
+
+                <a href="index.html#roteiros">
+                    Roteiros
+                </a>
+
+                <a href="index.html#comunidade">
+                    Comunidade
+                </a>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+    <main>
+
+        <section class="create-post-page">
+
+            <div class="container">
+
+                <a
+                    href="index.html#comunidade"
+                    class="back-link">
+
+                    ← Voltar para comunidade
+
+                </a>
+
+
+                <div class="create-post-container">
+
+                    <div class="section-heading">
+
+                        <span>📸 Compartilhe sua experiência</span>
+
+                        <h1>
+                            Criar publicação
+                        </h1>
+
+                        <p>
+                            Conte para a comunidade como foi
+                            sua experiência em Itamaracá.
+                        </p>
+
+                    </div>
+
+
+                    <form id="post-form">
+
+                        <div class="form-group">
+
+                            <label for="post-user">
+                                Seu nome
+                            </label>
+
+                            <input
+                                type="text"
+                                id="post-user"
+                                placeholder="Digite seu nome"
+                                required>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="post-spot">
+                                Ponto turístico
+                            </label>
+
+                            <select
+                                id="post-spot"
+                                required>
+
+                                <option value="">
+                                    Selecione um local
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="post-description">
+                                Sua experiência
+                            </label>
+
+                            <textarea
+                                id="post-description"
+                                rows="5"
+                                placeholder="Conte como foi sua experiência..."
+                                required>
+                            </textarea>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="post-rating">
+                                Avaliação
+                            </label>
+
+                            <select
+                                id="post-rating"
+                                required>
+
+                                <option value="">
+                                    Escolha uma nota
+                                </option>
+
+                                <option value="1">
+                                    ⭐ 1 estrela
+                                </option>
+
+                                <option value="2">
+                                    ⭐⭐ 2 estrelas
+                                </option>
+
+                                <option value="3">
+                                    ⭐⭐⭐ 3 estrelas
+                                </option>
+
+                                <option value="4">
+                                    ⭐⭐⭐⭐ 4 estrelas
+                                </option>
+
+                                <option value="5">
+                                    ⭐⭐⭐⭐⭐ 5 estrelas
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <button
+                            type="submit"
+                            class="btn btn-primary">
+
+                            Publicar experiência
+
+                        </button>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer class="footer create-post-footer">
+
+        <div class="container">
+
+            <p>
+                © 2026 Itamaracá Conecta
+            </p>
+
+            <p>
+                Valorizando o turismo e o patrimônio
+                da Ilha de Itamaracá.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <script src="js/data.js"></script>
+    <script src="js/create-post.js"></script>
+
+</body>
+
+</html>
