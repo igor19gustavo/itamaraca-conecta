@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Acesse ou crie sua conta no Itamaracá Conecta.">
+    <title>Entrar ou criar conta — Itamaracá Conecta</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="auth-page">
+    <header class="header auth-header">
+        <div class="container header-content">
+            <a href="index.html" class="logo"><span class="logo-icon">🌴</span><span>Itamaracá <strong>Conecta</strong></span></a>
+            <nav class="navigation"><a href="index.html">Voltar ao início</a></nav>
+        </div>
+    </header>
+
+    <main class="auth-main">
+        <section class="auth-card" aria-labelledby="auth-title">
+            <div class="auth-brand-icon">🌴</div>
+            <p class="auth-eyebrow">Comunidade Itamaracá Conecta</p>
+            <h1 id="auth-title">Bem-vindo!</h1>
+            <p class="auth-intro">Entre na sua conta ou crie um perfil para compartilhar suas experiências turísticas.</p>
+
+            <div class="auth-tabs" role="tablist" aria-label="Acesso à conta">
+                <button type="button" class="auth-tab active" id="login-tab" role="tab" aria-selected="true" aria-controls="login-panel">Entrar</button>
+                <button type="button" class="auth-tab" id="register-tab" role="tab" aria-selected="false" aria-controls="register-panel">Criar conta</button>
+            </div>
+
+            <div id="auth-message" class="auth-message" role="status" aria-live="polite"></div>
+
+            <form id="login-form" class="auth-form" autocomplete="on">
+                <div class="auth-field"><label for="login-username">Nome de usuário</label><input id="login-username" name="username" type="text" autocomplete="username" required maxlength="30" placeholder="Seu nome de usuário"></div>
+                <div class="auth-field"><label for="login-password">Senha</label><input id="login-password" name="password" type="password" autocomplete="current-password" required minlength="6" placeholder="Sua senha"></div>
+                <button type="submit" class="btn btn-primary auth-submit">Entrar na conta</button>
+            </form>
+
+            <form id="register-form" class="auth-form" autocomplete="on" hidden>
+                <div class="auth-field"><label for="register-name">Nome para exibição</label><input id="register-name" name="name" type="text" autocomplete="name" required maxlength="60" placeholder="Como você quer aparecer no site?"></div>
+                <div class="auth-field"><label for="register-username">Nome de usuário</label><input id="register-username" name="username" type="text" autocomplete="username" required minlength="3" maxlength="30" pattern="[A-Za-z0-9_.-]+" title="Use letras, números, ponto, hífen ou sublinhado." placeholder="Ex.: visitante_01"><small>Use letras, números, ponto, hífen ou sublinhado.</small></div>
+                <div class="auth-field"><label for="register-password">Criar senha</label><input id="register-password" name="password" type="password" autocomplete="new-password" required minlength="6" placeholder="Mínimo de 6 caracteres"></div>
+                <div class="auth-field"><label for="register-password-confirm">Confirmar senha</label><input id="register-password-confirm" name="passwordConfirm" type="password" autocomplete="new-password" required minlength="6" placeholder="Digite a senha novamente"></div>
+                <button type="submit" class="btn btn-primary auth-submit">Criar minha conta</button>
+            </form>
+
+            <p class="auth-local-note"><strong>Protótipo local:</strong> as contas ficam salvas neste navegador e neste computador. Não use uma senha pessoal importante.</p>
+        </section>
+    </main>
+    <script src="js/auth.js"></script>
+</body>
+</html>

@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Perfil do usuário no Itamaracá Conecta.">
+    <title>Meu perfil — Itamaracá Conecta</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="profile-page">
+
+    <header class="header">
+        <div class="container header-content">
+
+            <a href="index.html" class="logo">
+                <span class="logo-icon">🌴</span>
+                <span>Itamaracá <strong>Conecta</strong></span>
+            </a>
+
+            <nav class="navigation">
+                <a href="index.html">Início</a>
+                <a href="profile.html">Meu perfil</a>
+            </nav>
+
+        </div>
+    </header>
+
+
+    <main
+        class="container profile-main"
+        style="padding-top: 40px; padding-bottom: 60px;"
+    >
+
+        <section
+            class="auth-card profile-card"
+            style="margin: 0 auto;"
+        >
+
+            <!-- CABEÇALHO DO PERFIL -->
+
+            <div class="profile-header">
+
+                <div
+                    id="profile-avatar"
+                    class="profile-avatar"
+                >
+
+                    <img
+                        id="profile-avatar-image"
+                        alt="Foto de perfil"
+                        hidden
+                    >
+
+                    <span id="profile-avatar-placeholder">
+                        👤
+                    </span>
+
+                </div>
+
+
+                <div class="profile-identity">
+
+                    <h1 id="profile-name">
+                        Carregando perfil...
+                    </h1>
+
+                    <p id="profile-username"></p>
+
+                    <p id="profile-bio">
+                        Nenhuma biografia adicionada.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- BOTÃO PARA ENTRAR NO MODO DE EDIÇÃO -->
+
+            <button
+                id="edit-profile-button"
+                type="button"
+                class="btn btn-primary auth-submit"
+            >
+                Editar perfil
+            </button>
+
+
+            <!-- FORMULÁRIO DE EDIÇÃO -->
+
+            <form
+                id="edit-profile-form"
+                class="auth-form"
+                hidden
+            >
+
+                <div class="auth-field">
+
+                    <label for="edit-name">
+                        Nome de exibição
+                    </label>
+
+                    <input
+                        id="edit-name"
+                        type="text"
+                        maxlength="60"
+                        required
+                        placeholder="Como deseja aparecer?"
+                    >
+
+                </div>
+
+
+                <div class="auth-field">
+
+                    <label for="edit-bio">
+                        Biografia
+                    </label>
+
+                    <textarea
+                        id="edit-bio"
+                        maxlength="250"
+                        rows="4"
+                        placeholder="Conte um pouco sobre você e suas experiências em Itamaracá..."
+                    ></textarea>
+
+                    <small>
+                        Máximo de 250 caracteres.
+                    </small>
+
+                </div>
+
+
+                <!-- EDIÇÃO DA FOTO DE PERFIL -->
+
+                <div
+                    id="avatar-controls"
+                    class="avatar-controls"
+                >
+
+                    <div class="auth-field">
+
+                        <label for="avatar-input">
+                            Foto de perfil
+                        </label>
+
+                        <input
+                            id="avatar-input"
+                            type="file"
+                            accept="image/png, image/jpeg, image/webp"
+                        >
+
+                        <small>
+                            Escolha uma imagem PNG, JPEG ou WebP.
+                        </small>
+
+                    </div>
+
+
+                    <button
+                        id="save-avatar-button"
+                        type="button"
+                        class="btn btn-primary auth-submit"
+                    >
+                        Salvar foto
+                    </button>
+
+
+                    <button
+                        id="remove-avatar-button"
+                        type="button"
+                        class="auth-submit"
+                    >
+                        Remover foto
+                    </button>
+
+                </div>
+
+
+                <!-- BOTÕES DO FORMULÁRIO -->
+
+                <button
+                    type="submit"
+                    class="btn btn-primary auth-submit"
+                >
+                    Salvar alterações
+                </button>
+
+
+                <button
+                    id="cancel-edit-button"
+                    type="button"
+                    class="auth-submit"
+                >
+                    Cancelar
+                </button>
+
+            </form>
+
+
+            <hr>
+
+
+            <!-- LOCAIS VISITADOS -->
+
+            <h2>
+                Locais visitados
+            </h2>
+
+
+            <ul id="visited-spots">
+
+                <li>
+                    Nenhum local registrado ainda.
+                </li>
+
+            </ul>
+
+
+            <form
+                id="visited-spot-form"
+                class="auth-form"
+            >
+
+                <div class="auth-field">
+
+                    <label for="visited-spot-name">
+                        Adicionar local visitado
+                    </label>
+
+                    <input
+                        id="visited-spot-name"
+                        type="text"
+                        maxlength="80"
+                        required
+                        placeholder="Ex.: Forte Orange"
+                    >
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="add-visited-button"
+                >
+                    + Adicionar local
+                </button>
+
+            </form>
+
+
+            <p
+                id="visited-spot-message"
+                role="status"
+                aria-live="polite"
+            ></p>
+
+
+            <hr>
+
+
+            <!-- PUBLICAÇÕES -->
+
+            <section
+                id="profile-posts-section"
+                class="profile-posts-section"
+            >
+
+                <div class="profile-posts-heading">
+
+                    <h2 id="profile-posts-title">
+                        Publicações
+                    </h2>
+
+
+                    <a
+                        id="create-profile-post-button"
+                        href="create-post.html"
+                        class="btn btn-primary"
+                    >
+                        + Criar publicação
+                    </a>
+
+                </div>
+
+
+                <p
+                    id="profile-posts-message"
+                    role="status"
+                    aria-live="polite"
+                >
+                    Carregando publicações...
+                </p>
+
+
+                <div
+                    id="profile-posts"
+                    class="profile-posts-list"
+                ></div>
+
+            </section>
+
+
+            <!-- SAIR DA CONTA -->
+
+            <button
+                id="logout-button"
+                type="button"
+                class="btn btn-primary auth-submit"
+            >
+                Sair da conta
+            </button>
+
+
+            <p
+                id="profile-message"
+                role="status"
+                aria-live="polite"
+            ></p>
+
+        </section>
+
+    </main>
+
+
+    <script src="js/profile.js"></script>
+    <script src="js/post-storage.js"></script>
+</body>
+</html>

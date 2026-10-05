@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+        content="Itamaracá Conecta — descubra os pontos turísticos, a história, a cultura e as experiências da Ilha de Itamaracá.">
+
+    <title>Itamaracá Conecta</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+/>
+    
+</head>
+
+<body>
+
+    <!-- CABEÇALHO -->
+    <header class="header">
+
+        <div class="container header-content">
+
+            <a href="index.html" class="logo">
+                <span class="logo-icon">🌴</span>
+                <span>Itamaracá <strong>Conecta</strong></span>
+            </a>
+
+            <nav class="navigation">
+                <a href="#inicio">Início</a>
+                <a href="#explorar">Explorar</a>
+                <a href="#roteiros">Roteiros</a>
+                <a href="#comunidade">Comunidade</a>
+                <a href="#favoritos">Favoritos</a>
+                <a href="#conheca">Conheça Itamaracá</a>
+                <a href="auth.html" class="account-nav-link" id="account-nav-link">
+                    Entrar / Criar conta
+                </a>
+            </nav>
+
+            <button class="menu-button" aria-label="Abrir menu">
+                ☰
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main>
+
+        <!-- HERO -->
+        <section id="inicio" class="hero">
+
+            <div class="container hero-content">
+
+                <div class="hero-text">
+
+                    <span class="hero-label">
+                        🌊 Descubra a Ilha
+                    </span>
+
+                    <h1>
+                        Conecte-se com
+                        <span>Itamaracá.</span>
+                    </h1>
+
+                    <p>
+                        Explore praias, história, natureza e cultura.
+                        Descubra lugares incríveis e compartilhe
+                        suas experiências com a comunidade.
+                    </p>
+
+                    <div class="hero-buttons">
+
+                        <a href="#explorar" class="button button-primary">
+                            Explorar Itamaracá
+                        </a>
+
+                        <a href="#mapa" class="button button-secondary">
+                            Ver mapa
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- PONTOS EM DESTAQUE -->
+        <section id="explorar" class="section">
+
+            <div class="container">
+
+                <div class="section-header">
+
+                    <div>
+                        <span class="section-label">
+                            Lugares para conhecer
+                        </span>
+
+                        <h2>
+                            Explore Itamaracá
+                        </h2>
+                    </div>
+
+                        <div class="search-box">
+
+                            <input
+                                type="text"
+                                id="search-tourist"
+                                placeholder="🔎 Procurar um ponto turístico..."
+                            >
+
+                            <button
+                                type="button"
+                                id="clear-search"
+                                class="clear-search">
+                                Limpar pesquisa
+                            </button>
+
+                        </div>
+
+                <div id="route-info" class="route-info"></div>
+
+                <div class="category-filters">
+
+    <button class="filter-button active" data-category="Todos">
+        Todos
+    </button>
+
+    <button class="filter-button" data-category="Histórico">
+        Histórico
+    </button>
+
+    <button class="filter-button" data-category="Natureza">
+        Natureza
+    </button>
+
+    <button class="filter-button" data-category="Praia">
+        Praia
+    </button>
+
+    <button class="filter-button" data-category="Trilha">
+        Trilha
+    </button>
+
+    <button class="filter-button" data-category="Cultural">
+        Cultural
+    </button>
+
+</div>
+
+                    <a href="#" class="see-all">
+                        Ver todos →
+                    </a>
+
+                </div>
+
+
+                <div class="tourist-grid">
+
+                    <div class="tourist-grid" id="tourist-grid">
+                        
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- MAPA -->
+        <section id="mapa" class="map-section">
+
+            <div class="container">
+
+                <div class="map-content">
+
+                    <div class="map-text">
+
+                        <span class="section-label">
+                            Encontre seu próximo destino
+                        </span>
+
+                        <h2>
+                            Explore a ilha
+                            pelo mapa.
+                        </h2>
+
+                        <p>
+                            Encontre pontos turísticos, praias,
+                            locais históricos e experiências
+                            próximas a você.
+                        </p>
+
+                        <button class="button button-primary">
+                            Explorar mapa
+                        </button>
+
+                    </div>
+
+                    <div id="map"></div>
+                    
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ROTEIROS -->
+        <section id="roteiros" class="section">
+
+            <div class="container">
+
+                <div class="section-header">
+
+                    <div>
+                        <span class="section-label">
+                            Planeje sua visita
+                        </span>
+
+                        <h2>
+                            Roteiros para explorar
+                        </h2>
+                    </div>
+
+                </div>
+
+
+                <div class="routes-grid">
+
+                    <article class="route-card">
+                        <span class="route-icon">🏛️</span>
+
+                        <h3>Rota Histórica</h3>
+
+                        <p>
+                            Conheça lugares que fazem parte
+                            da história de Itamaracá.
+                        </p>
+
+                        <a href="#explorar" class="route-link" data-route-category="Histórico">
+                            Ver roteiro →
+                        </a>
+                    </article>
+
+
+                    <article class="route-card">
+                        <span class="route-icon">🌿</span>
+
+                        <h3>Rota Natureza</h3>
+
+                        <p>
+                            Descubra paisagens naturais e
+                            lugares para se conectar com a natureza.
+                        </p>
+
+                        <a href="#explorar" class="route-link" data-route-category="Natureza">
+                            Ver roteiro →
+                        </a>
+                    </article>
+
+
+                    <article class="route-card">
+                        <span class="route-icon">🏖️</span>
+
+                        <h3>Rota Praias</h3>
+
+                        <p>
+                            Explore praias e lugares especiais
+                            para aproveitar o litoral da ilha.
+                        </p>
+
+                        <a href="#explorar" class="route-link" data-route-category="Praia">
+                            Ver roteiro →
+                        </a>
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- CONHEÇA ITAMARACÁ-->
+
+        <section id="conheca" class="section">
+
+    <div class="container">
+
+        <div class="section-header">
+
+            <div>
+                <span class="section-label">
+                    Além dos pontos turísticos
+                </span>
+
+                <h2>
+                    Conheça Itamaracá
+                </h2>
+            </div>
+
+        </div>
+
+        <div class="knowledge-grid">
+
+            <article class="knowledge-card">
+
+                <span class="knowledge-icon">🗿</span>
+
+                <h3>História e patrimônio</h3>
+
+                <p>
+                    Conheça elementos da história da ilha,
+                    seus patrimônios e locais relacionados
+                    à ocupação da região.
+                </p>
+
+                <button
+                    class="knowledge-button"
+                    type="button"
+                    data-topic="history">
+                    Saiba mais →
+                </button>
+
+            </article>
+
+
+            <article class="knowledge-card">
+
+                <span class="knowledge-icon">🦋</span>
+
+                <h3>Natureza e biodiversidade</h3>
+
+                <p>
+                    Descubra a importância das paisagens
+                    naturais, dos ambientes costeiros e
+                    da preservação ambiental.
+                </p>
+
+                <button
+                    class="knowledge-button"
+                    type="button"
+                    data-topic="nature">
+                    Saiba mais →
+                </button>
+
+            </article>
+
+
+            <article class="knowledge-card">
+
+                <span class="knowledge-icon">🎶</span>
+
+                <h3>Cultura e tradições</h3>
+
+                <p>
+                    Conheça manifestações culturais,
+                    tradições e aspectos da identidade
+                    da Ilha de Itamaracá.
+                </p>
+
+                <button
+                    class="knowledge-button"
+                    type="button"
+                    data-topic="culture">
+                    Saiba mais →
+                </button>
+
+            </article>
+
+        </div>
+
+        <div
+            id="knowledge-content"
+            class="knowledge-content">
+        </div>
+
+    </div>
+
+</section>
+
+        <!-- FAVORITOS -->
+        <section id="favoritos" class="section">
+
+    <div class="container">
+
+        <div class="section-header">
+
+            <div>
+                <span class="section-label">
+                    Seus locais salvos
+                </span>
+
+                <h2>
+                    Meus favoritos
+                </h2>
+            </div>
+
+        </div>
+
+        <div
+            class="tourist-grid"
+            id="favorite-grid">
+        </div>
+
+    </div>
+
+</section>
+
+
+        <!-- COMUNIDADE -->
+        <!-- COMUNIDADE -->
+<section id="comunidade" class="community-section">
+
+    <div class="container community-content">
+
+        <div class="community-intro">
+
+            <span class="section-label">
+                Faça parte
+            </span>
+
+            <h2>
+                Sua experiência também
+                faz parte de Itamaracá.
+            </h2>
+
+            <p>
+                Compartilhe fotos, avaliações e histórias
+                dos lugares que você visitou.
+            </p>
+
+            <a href="create-post.html" class="btn btn-primary community-create-button">
+                📸 Criar publicação
+            </a>
+
+        </div>
+
+        <div class="community-feed" id="community-feed"></div>
+
+        <div class="community-icon">
+            📸
+        </div>
+
+    </div>
+
+</section>
+
+    </main>
+
+
+    <!-- RODAPÉ -->
+<footer class="footer">
+
+    <div class="container footer-content">
+
+        <div class="footer-brand">
+            <div class="logo">
+                🌴 Itamaracá <strong>Conecta</strong>
+            </div>
+
+            <p>
+                Conectando pessoas, lugares e experiências.
+            </p>
+
+            <p class="footer-description">
+                Uma plataforma colaborativa de informações turísticas,
+                históricas e culturais da Ilha de Itamaracá.
+            </p>
+        </div>
+
+        <div class="footer-links">
+
+            <h3>Navegação</h3>
+
+            <a href="#inicio">Início</a>
+            <a href="#explorar">Explorar</a>
+            <a href="#roteiros">Roteiros</a>
+            <a href="#conheca">Conheça Itamaracá</a>
+            <a href="#favoritos">Meus favoritos</a>
+            <a href="#comunidade">Comunidade</a>
+
+        </div>
+
+    </div>
+
+    <div class="container footer-bottom">
+
+        <p>
+            © 2026 Itamaracá Conecta — Projeto acadêmico.
+        </p>
+
+        <p>
+            Desenvolvido com HTML, CSS e JavaScript.
+        </p>
+
+    </div>
+
+</footer>
+
+        <button
+            id="back-to-top"
+            class="back-to-top"
+            type="button">
+              ↑
+        </button>
+
+    <script
+    src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js">
+    </script>
+    <script src="js/data.js"></script>
+    <script src="js/app.js"></script>
+
+    
+<script>
+    const accountNavLink = document.querySelector("#account-nav-link");
+
+    if (accountNavLink) {
+        try {
+            const session = JSON.parse(
+                localStorage.getItem("itamaracaCurrentUser") || "null"
+            );
+
+            if (session && session.userId) {
+                accountNavLink.href = "profile.html";
+                accountNavLink.textContent = "Meu perfil";
+            }
+        } catch {
+            // Mantém o link de acesso à conta caso a sessão não possa ser lida.
+        }
+    }
+</script>
+
+</body>
+
+</html>
